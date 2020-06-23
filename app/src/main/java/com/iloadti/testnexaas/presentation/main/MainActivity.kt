@@ -17,6 +17,7 @@ import com.iloadti.testnexaas.presentation.main.state.SignState
 import com.iloadti.testnexaas.presentation.main.viewmodel.SignViewModel
 import com.iloadti.testnexaas.presentation.purchaseList.adapter.ItemClickListener
 import com.iloadti.testnexaas.presentation.purchaseList.view.HomeFragment
+import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 

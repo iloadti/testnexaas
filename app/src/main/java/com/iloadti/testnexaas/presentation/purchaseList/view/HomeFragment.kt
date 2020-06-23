@@ -1,5 +1,6 @@
 package com.iloadti.testnexaas.presentation.purchaseList.view
 
+import android.opengl.Visibility
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,10 +14,12 @@ import com.iloadti.testnexaas.R
 import com.iloadti.testnexaas.domain.entities.PurchaseListResponse
 import com.iloadti.testnexaas.extension.formatForEUACurrency
 import com.iloadti.testnexaas.presentation.itemDetail.view.DetailItemFragment
+import com.iloadti.testnexaas.presentation.main.state.SignState
 import com.iloadti.testnexaas.presentation.purchaseList.adapter.ItemClickListener
 import com.iloadti.testnexaas.presentation.purchaseList.adapter.ListItemAdapter
 import com.iloadti.testnexaas.presentation.purchaseList.state.HomeState
 import com.iloadti.testnexaas.presentation.purchaseList.viewModel.HomeViewModel
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import java.math.BigDecimal
@@ -48,6 +51,7 @@ class HomeFragment : Fragment(), ItemClickListener {
         homeViewModel.run {
             homeState.observe(this@HomeFragment, Observer { state ->
                 when (state) {
+                    is HomeState.ShowProgressRequest -> showProgress(state)
                     is HomeState.ShowPurchaseList -> showPurchaseList(state)
                     is HomeState.ShowError -> showError(state)
                 }
@@ -63,6 +67,15 @@ class HomeFragment : Fragment(), ItemClickListener {
             } else
                 homeViewModel.fetchPurchaseList()
         }
+    }
+
+    private fun showProgress(state: HomeState.ShowProgressRequest){
+        val valueProgress : Boolean = state.value
+
+        if(valueProgress)
+            progressBar.visibility = View.VISIBLE
+        else
+            progressBar.visibility = View.GONE
     }
 
     private fun showPurchaseList(state: HomeState.ShowPurchaseList) {

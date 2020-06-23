@@ -18,11 +18,16 @@ class HomeViewModel(private val homeUseCase: HomeUseCase) : ViewModel() {
         get() = _homeState
 
     fun fetchPurchaseList() {
+        _homeState.postValue(HomeState.ShowProgressRequest(true))
+
         viewModelScope.launch {
+
             homeUseCase.fetchPublicKey()
                 .flow({
+                    _homeState.value = HomeState.ShowProgressRequest(false)
                     _homeState.postValue(HomeState.ShowPurchaseList(it))
                 }, {
+                    _homeState.value = HomeState.ShowProgressRequest(false)
                     val error = when (it) {
                         is FailureError.ErroNetwork -> Throwable("Sem internet")
                         is FailureError.ErrorException -> it.ex

@@ -72,4 +72,48 @@ dependencies {
 
     implementation 'com.facebook.fresco:fresco:2.2.0'
 
+    /* Koin Test*/
+    testImplementation "org.koin:koin-test:$versions.koin"
+
+    /* Koin Android Scope features */
+    implementation "org.koin:koin-android-scope:$versions.koin"
+
+    /* Koin Android ViewModel features */
+    implementation "org.koin:koin-android-viewmodel:$versions.koin"
+
+    /* Koin Android Experimental features */
+    implementation "org.koin:koin-android-ext:$versions.koin"
+
+    /*  Koin for Java */
+    implementation "org.koin:koin-java:$versions.koin"
+
+    /* Koin Test*/
+    testImplementation "org.koin:koin-test:$versions.koin"
+
+/* JUnit */
+    testImplementation "junit:junit:$versions.junit"
+    androidTestImplementation "junit:junit:$versions.junit"
+
+/* Support Test Runner */
+    androidTestImplementation "com.android.support.test:runner:$versions.test_runner"
+    testImplementation("android.arch.core:core-testing:$versions.core_testing", {
+        exclude group: 'org.mockito'
+    })
+
+/* Mockito */
+    androidTestImplementation "org.mockito:mockito-core:$versions.mockito"
+    androidTestImplementation "org.mockito:mockito-android:$versions.mockito"
+
+    testImplementation "org.mockito:mockito-core:$versions.mockito"
+    testImplementation "org.powermock:powermock-api-mockito2:$versions.powermock"
+    testImplementation "org.powermock:powermock-module-junit4:$versions.powermock"
+
+    testImplementation("org.robolectric:robolectric:$versions.robolectric") {
+        exclude group: 'commons-logging', module: 'commons-logging'
+        exclude group: 'org.apache.httpcomponents', module: 'httpclient'
+        exclude group: 'org.mockito', module: 'mockito-core'
+        exclude group: 'org.powermock', module: 'powermock-api-mockito2'
+        exclude group: 'org.powermock', module: 'powermock-module-junit4'
+    }
+
 }
