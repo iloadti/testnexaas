@@ -13,19 +13,128 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="20dp"
         tools:text="fewrwrwerew" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/nSVPurchaseList"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         app:layout_constraintTop_toBottomOf="@+id/txtVCountItems"
-        tools:layout_editor_absoluteX="0dp"
-        android:paddingLeft="24dp"
-        android:paddingRight="24dp"/>
+        tools:layout_editor_absoluteX="0dp"/>
+
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintTop_toBottomOf="@+id/nSVPurchaseList"
+        tools:layout_editor_absoluteX="9dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"/>
+
+    <TextView
+        android:id="@+id/txtVTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/view"
+        app:layout_constraintLeft_toLeftOf="@id/view"
+        android:layout_marginStart="10dp"
+        android:textSize="18sp"
+        android:layout_marginTop="30dp"
+        android:text="TOTAL"/>
+
+
+    <TextView
+        android:id="@+id/txtVQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/txtVTotal"
+        app:layout_constraintStart_toStartOf="@id/txtVTotal"
+        android:layout_marginTop="20dp"
+        android:text="Subtotal"/>
+
+    <TextView
+        android:id="@+id/txtVItemValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="@id/txtVTotal"
+        app:layout_constraintBottom_toBottomOf="@id/txtVTotal"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="$ 21.50"
+        android:paddingRight="10dp"/>
+
+    <TextView
+        android:id="@+id/txtVSubtotalValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        app:layout_constraintTop_toTopOf="@id/txtVQuantity"
+        app:layout_constraintBottom_toBottomOf="@id/txtVQuantity"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="$ 1.50"
+        android:paddingRight="10dp"/>
+
+    <TextView
+        android:id="@+id/txtVDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/txtVQuantity"
+        app:layout_constraintStart_toStartOf="@id/txtVTotal"
+        android:text="Shipping"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/txtVShippingValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        app:layout_constraintTop_toTopOf="@id/txtVDescription"
+        app:layout_constraintBottom_toBottomOf="@id/txtVDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="$ 12.50"
+        android:paddingRight="10dp"/>
+
+    <TextView
+        android:id="@+id/txtVTax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/txtVDescription"
+        app:layout_constraintStart_toStartOf="@id/txtVDescription"
+        android:text="TAX"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/txtVTAXValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        app:layout_constraintTop_toTopOf="@id/txtVTax"
+        app:layout_constraintBottom_toBottomOf="@id/txtVTax"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="$ 0.50"
+        android:paddingRight="10dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/colorPrimary"
+        android:text="CHECKOUT"
+        android:textColor="@android:color/white"
+        android:layout_margin="5dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

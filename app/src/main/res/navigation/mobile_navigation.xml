@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.iloadti.testnexas.presentation.purchaseList.view.HomeFragment"
+        android:name="com.iloadti.testnexaas.presentation.purchaseList.view.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.iloadti.testnexas.ui.gallery.GalleryFragment"
+        android:name="com.iloadti.testnexaas.ui.gallery.GalleryFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_gallery" />
 

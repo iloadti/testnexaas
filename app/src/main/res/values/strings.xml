@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TestNexas</string>
+    <string name="app_name">TestNexaas</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -10,6 +10,6 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="countItems"> items in your cart</string>
-    <string name="walter_aranda_junior">Walter Aranda Junior</string>
+    <string name="walter_aranda_junior">Walter Aranda Junior \n https://github.com/iloadti/</string>
     <string name="https_github_com_iloadti">https://github.com/iloadti/</string>
 </resources>

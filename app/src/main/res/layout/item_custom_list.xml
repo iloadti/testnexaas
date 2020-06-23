@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/itemSelect"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:fresco="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -15,57 +16,45 @@
         android:layout_gravity="center"
         fresco:actualImageScaleType="fitXY"
         fresco:fadeDuration="1000"
+        fresco:layout_constraintTop_toTopOf="parent"
         fresco:layout_constraintStart_toStartOf="parent"
+        fresco:layout_constraintBottom_toBottomOf="parent"
         fresco:progressBarAutoRotateInterval="1000"
         fresco:progressBarImage="@drawable/progress"
         tools:layout_editor_absoluteY="10dp" />
 
     <TextView
         android:id="@+id/txtVName"
-        android:layout_width="173dp"
-        android:layout_height="14dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        fresco:layout_constraintTop_toTopOf="@id/imgItem"
+        fresco:layout_constraintLeft_toRightOf="@id/imgItem"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:textColor="#3578A6"
+        android:textColor="@android:color/black"
         android:textSize="12sp"
-        android:textStyle="bold"
-        fresco:layout_constraintStart_toEndOf="@+id/imgItem"
-        fresco:layout_constraintTop_toTopOf="parent" />
+        tools:text="Pencil"/>
 
 
     <TextView
         android:id="@+id/txtVDescription"
-        android:layout_width="175dp"
-        android:layout_height="16dp"
-        android:layout_marginTop="30dp"
-        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:textColor="@android:color/black"
         android:textSize="12sp"
-        fresco:layout_constraintTop_toBottomOf="@+id/txtVName"
-        tools:layout_editor_absoluteX="60dp" />
+        fresco:layout_constraintTop_toBottomOf="@id/txtVName"
+        fresco:layout_constraintBottom_toBottomOf="@id/imgItem"
+        fresco:layout_constraintStart_toStartOf="@id/txtVName"
+        tools:text="in stock"/>
 
     <TextView
         android:id="@+id/txtVItemValue"
-        android:layout_width="56dp"
-        android:layout_height="17dp"
-        android:textColor="#3578A6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:textSize="16sp"
-        android:textStyle="bold"
-        fresco:layout_constraintBottom_toTopOf="@+id/view"
+        android:textColor="@android:color/black"
+        fresco:layout_constraintTop_toTopOf="@id/txtVName"
+        fresco:layout_constraintBottom_toBottomOf="@id/txtVName"
         fresco:layout_constraintEnd_toEndOf="parent"
-        fresco:layout_constraintHorizontal_bias="0.94"
-        fresco:layout_constraintStart_toEndOf="@+id/txtVName"
-        fresco:layout_constraintTop_toTopOf="parent"
-        fresco:layout_constraintVertical_bias="0.45" />
-
-    <View
-        android:id="@+id/view"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:layout_marginTop="10dp"
-        android:background="@android:color/darker_gray"
-        fresco:layout_constraintTop_toBottomOf="@+id/txtVDescription"
-        tools:layout_editor_absoluteX="9dp" />
+        tools:text="1.50"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
