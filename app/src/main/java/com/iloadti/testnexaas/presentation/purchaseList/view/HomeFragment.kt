@@ -123,6 +123,10 @@ class HomeFragment : Fragment(), ItemClickListener {
 
         val ft: FragmentTransaction = activity?.supportFragmentManager!!.beginTransaction()
 
+        ft.setTransition( FragmentTransaction.TRANSIT_FRAGMENT_OPEN )
+//        ft.setCustomAnimations(R.anim.slide_out_down, R.anim.slide_in_down)
+//        ft.setCustomAnimations(R.anim.slide_in_up, R.anim.slide_out_up)
+//        ft.setCustomAnimations(R.anim.slide_from_right, R.anim.slide_to_left, R.anim.slide_from_left, R.anim.slide_to_right)
         ft.add(R.id.content, detailItemFragment)
         ft.addToBackStack(null);
         ft.commit()
